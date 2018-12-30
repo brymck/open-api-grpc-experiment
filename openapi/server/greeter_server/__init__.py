@@ -2,7 +2,7 @@ from flask import Flask, json, make_response
 from flask_restplus import Api, Resource, fields
 
 app = Flask(__name__)
-api = Api(app, version='0.0.1', schemes=['http'])
+api = Api(app, version='0.0.1')
 
 person = api.model('Person', {
     'name': fields.String(required=True, description="The person's name")
