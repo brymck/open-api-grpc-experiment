@@ -8,18 +8,17 @@ Usage
 
 ```sh
 cd openapi
-make deps
-make openapi
+make deps install
 ```
 
 And in separate terminals,
 
 ```sh
-make openapi-serve
+make serve
 ```
 
 and
 
 ```sh
-make openapi-query
+make query
 ```
