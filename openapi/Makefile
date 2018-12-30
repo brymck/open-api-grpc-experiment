@@ -13,7 +13,7 @@ install:
 	{ python -c 'import greeter_server as gs; gs.app.run()' & }; \
 	    pid=$$!; \
 	    sleep 1s; \
-	    curl --header 'Content-Type: application/json' localhost:5000/schema > openapi/swagger.json; \
+	    curl --header 'Content-Type: application/json' localhost:5000/schema > swagger.json; \
 	    kill $$pid
 	rm -rf generated
 	$(BREW_PREFIX)/opt/swagger-codegen@2/bin/swagger-codegen generate --input-spec swagger.json --lang python --config config.json --output client
@@ -23,6 +23,6 @@ serve:
 	python -c 'import greeter_server as gs; gs.app.run()'
 
 query:
-	python openapi/query.py
+	python query.py
 
 .PHONY: all clean deps install serve query
